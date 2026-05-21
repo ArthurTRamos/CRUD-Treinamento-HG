@@ -1,6 +1,8 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { MatIconModule } from '@angular/material/icon';
+
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { CreateUpdatePage } from './create-update-page/create-update-page';
@@ -10,7 +12,7 @@ import { ContactBox } from './contact-box/contact-box';
 
 @NgModule({
   declarations: [App, CreateUpdatePage, MainPage, Button, ContactBox],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, MatIconModule, AppRoutingModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })
