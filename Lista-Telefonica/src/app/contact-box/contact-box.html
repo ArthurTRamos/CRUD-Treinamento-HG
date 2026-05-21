@@ -1,12 +1,16 @@
-<div class="box">
-    <span id="span-initial-letters">AR</span>
-    <div class="contact-name-number">
-        <span>Arthur Ramos</span>
-        <span>+55 19 987678712</span>
+@for (contact of contacts; track contact) {
+    <div class="box">
+            <div class="initial-letter-container">
+                <span id="span-initial-letters">{{ getInitialLetters(contact.name) }}</span>
+            </div>
+            <div class="contact-name-number">
+                <span id="name">{{ contact.name }}</span>
+                <span id="number">{{ contact.number }}</span>
+            </div>
+            <div class="image-container">
+                <a [href]="whatsappLink(contact.number)" target="_blank"><img src="whatsapp.png" alt="Whatsapp"></a>
+            </div>
+            <mat-icon>edit</mat-icon>
+            <mat-icon>delete</mat-icon>
     </div>
-    <div class="image-container">
-        <img src="whatsapp.png" alt="Whatsapp">
-    </div>
-    <mat-icon>edit</mat-icon>
-    <mat-icon>delete</mat-icon>
-</div>
+}
