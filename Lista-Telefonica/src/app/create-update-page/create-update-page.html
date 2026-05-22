@@ -1,1 +1,53 @@
-<p>create-update-page works!</p>
+@if (visualizationMode === 'edit') {
+
+    <div>
+        <div>
+            <h1>Criar contato</h1>
+
+            <div>
+                <form>
+                    <div>
+                        <label for="Name">Nome do contanto</label>
+                        <input id="Name" type="text" formControlName="nome"> 
+                    </div>
+                    <div>
+                        <label for="Number">Número</label>
+                        <input id="Number" type="text" formControlName="numero"> 
+                    </div>
+                    <div>
+                        <button (click)="enviarDados()"></button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+}
+
+@if (visualizationMode === 'create') {
+
+<div>
+    <div>
+        <h1>Criar contato</h1>
+
+        <div>
+            <form>
+                <div>
+                    <label for="Name">Nome do contanto</label>
+                    <input id="Name" type="text" formControlName="nome"> 
+                </div>
+                <div>
+                    <label for="Number">Número</label>
+                    <input id="Number" type="text" formControlName="numero"> 
+                </div>
+                <div>
+                    <button (click)="enviarDados()"></button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+}

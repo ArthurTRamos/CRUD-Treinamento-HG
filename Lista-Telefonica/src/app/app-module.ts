@@ -9,10 +9,11 @@ import { CreateUpdatePage } from './create-update-page/create-update-page';
 import { MainPage } from './main-page/main-page';
 import { Button } from './button/button';
 import { ContactBox } from './contact-box/contact-box';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [App, CreateUpdatePage, MainPage, Button, ContactBox],
-  imports: [BrowserModule, MatIconModule, AppRoutingModule],
+  imports: [BrowserModule, MatIconModule, AppRoutingModule, ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })

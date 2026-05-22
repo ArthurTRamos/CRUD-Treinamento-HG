@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './contact-box.scss',
 })
 export class ContactBox {
+  visualizationMode = "main";
   selectedContact: any = null;
 
   contacts: {id: number, name: string, number: string}[] = [
@@ -51,5 +52,23 @@ export class ContactBox {
 
   deleteContact(contact: {id: number, name: string, number: string}) {
     this.contacts = this.contacts.filter(contactItem => contactItem.id !== contact.id); 
+  }
+
+  @Output()
+  visualizationModeChange = new EventEmitter<string>();
+
+  initCreateMode() {
+    this.visuazationMode = "create"
+    this.visualizationModeChange.emit('create');
+  }
+
+  initEditMode() {
+    this.visuazationMode = "edit";
+    this.visualizationModeChange.emit('edit');
+  }
+
+  shutdowCreateUpdateMode() {
+    this.selectedContact = "main";
+    this.visualizationModeChange.emit('main');
   }
 }

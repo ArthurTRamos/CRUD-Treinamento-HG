@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './main-page.html',
   styleUrl: './main-page.scss',
 })
-export class MainPage {}
+export class MainPage {
+  visualizationMode = "main"
+}
