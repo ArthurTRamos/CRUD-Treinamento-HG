@@ -10,7 +10,18 @@
             <div class="image-container">
                 <a [href]="whatsappLink(contact.number)" target="_blank"><img src="whatsapp.png" alt="Whatsapp"></a>
             </div>
-            <mat-icon>edit</mat-icon>
-            <mat-icon>delete</mat-icon>
+            <button (click)="editContact(contact.id, contact.name, contact.number)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="deleteContact(contact)">
+                <mat-icon>delete</mat-icon>
+            </button>
     </div>
 }
+
+<!--@if (selectedContact) {
+    <app-create-update-page 
+        type="edit"
+        [contact]="selectedContact">
+    </app-create-update-page>
+}-->

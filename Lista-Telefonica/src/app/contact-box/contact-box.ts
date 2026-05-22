@@ -7,12 +7,16 @@ import { Component } from '@angular/core';
   styleUrl: './contact-box.scss',
 })
 export class ContactBox {
-  contacts: {name: string, number: string}[] = [
+  selectedContact: any = null;
+
+  contacts: {id: number, name: string, number: string}[] = [
     {
+      "id": 0,
       "name": "Art",
       "number": "+55 19 950211842"
     },
     {
+      "id": 1,
       "name": "Mai",
       "number": "+55 22 222"
     }
@@ -35,5 +39,17 @@ export class ContactBox {
   whatsappLink(number: string) {
     number = number.slice(1);
     return(`http://wa.me/${number.replaceAll(' ', '')}`);
+  }
+
+  editContact(id: number, name: string, number: string) {
+    this.selectedContact = {
+      "id": id,
+      "name": name,
+      "number": number
+    }
+  }
+
+  deleteContact(contact: {id: number, name: string, number: string}) {
+    this.contacts = this.contacts.filter(contactItem => contactItem.id !== contact.id); 
   }
 }
