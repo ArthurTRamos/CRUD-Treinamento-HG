@@ -1,4 +1,4 @@
-<@if ({{visualizationMode = "main"}}) {
+<@if (visualizationMode === 'main') {
     @for (contact of contacts; track contact) {
         <div class="box">
                 <div class="initial-letter-container">
@@ -11,7 +11,7 @@
                 <div class="image-container">
                     <a [href]="whatsappLink(contact.number)" target="_blank"><img src="whatsapp.png" alt="Whatsapp"></a>
                 </div>
-                <button (click)="editContact(contact.id, contact.name, contact.number)">
+                <button (click)="getContact(contact.id, contact.name, contact.number); initEditMode()">
                     <mat-icon>edit</mat-icon>
                 </button>
                 <button (click)="deleteContact(contact)">
@@ -25,7 +25,14 @@
 
     <app-create-update-page 
         [visualizationMode]="visualizationMode"
-        [contact]="selectedContact">
+        [contact]="selectedContact"
+        (save)="editContact(
+            selectedContact!.id,
+            $event.name,
+            $event.number
+        );
+        shutdowCreateUpdateMode()"
+        (back)="shutdowCreateUpdateMode()">
     </app-create-update-page>
 
 }
@@ -33,7 +40,13 @@
 @if (visualizationMode === 'create') {
 
     <app-create-update-page 
-        [visualizationMode]="visualizationMode">
+        [visualizationMode]="visualizationMode"
+        (save)="createContact(
+            $event.name,
+            $event.number
+        );
+        shutdowCreateUpdateMode()"
+        (back)="shutdowCreateUpdateMode()">
     </app-create-update-page>
 
 }

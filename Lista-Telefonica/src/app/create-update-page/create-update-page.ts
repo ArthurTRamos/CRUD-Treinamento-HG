@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -7,24 +7,60 @@ import { FormControl, FormGroup, Validators} from '@angular/forms';
   templateUrl: './create-update-page.html',
   styleUrl: './create-update-page.scss',
 })
-export class CreateUpdatePage {
+export class CreateUpdatePage implements OnInit {
+
   @Input()
-  VisualizationMode!: 'create' | 'edit';
+  visualizationMode!: string;
+
+  @Input()
+  contact?: { id: number, name: string, number: string };
+
+  @Output()
+  save = new EventEmitter<{
+    name: string;
+    number: string;
+  }>();
+
+  @Output()
+  back = new EventEmitter();
 
   meuFormulario = new FormGroup({
     nome: new FormControl<string>('', {
-      validators: [Validators.required]
+      validators: [Validators.required],
+      nonNullable: true
     }),
-    numero: new FormControl<number>(0, {
-      validators: [Validators.required]
+
+    numero: new FormControl<string>('', {
+      validators: [Validators.required],
+      nonNullable: true
     })
   });
 
+  ngOnInit(): void {
+
+    if (this.contact) {
+
+      this.meuFormulario.patchValue({
+        nome: this.contact.name,
+        numero: this.contact.number
+      });
+
+      console.log(this.contact)
+
+    }
+  }
+
   enviarDados() {
 
-    const dados = this.meuFormulario.value;
+    const dados = this.meuFormulario.getRawValue();
 
-    console.log(dados.nome);
-    console.log(dados.numero);
+    this.save.emit({
+      name: dados.nome,
+      number: dados.numero
+    });
+  }
+
+  out(){
+    this.back.emit();
   }
 }

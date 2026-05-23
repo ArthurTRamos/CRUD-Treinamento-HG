@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contact-box',
@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './contact-box.scss',
 })
 export class ContactBox {
-  visualizationMode = "main";
   selectedContact: any = null;
 
   contacts: {id: number, name: string, number: string}[] = [
@@ -42,7 +41,7 @@ export class ContactBox {
     return(`http://wa.me/${number.replaceAll(' ', '')}`);
   }
 
-  editContact(id: number, name: string, number: string) {
+  getContact(id: number, name: string, number: string) {
     this.selectedContact = {
       "id": id,
       "name": name,
@@ -50,25 +49,43 @@ export class ContactBox {
     }
   }
 
+  editContact(id: number, name: string, number: string) {
+    this.contacts = this.contacts.map(contact => {
+      if (contact.id === id) {
+        return {
+          ...contact,
+          name: name,
+          number: number
+        };
+      }
+      return contact;
+    });
+  }
+
+  createContact(name: string, number: string) {
+    const newContact = {
+      id: this.contacts.length + 1,
+      name,
+      number
+    };
+    this.contacts = [...this.contacts, newContact];
+  }
+
   deleteContact(contact: {id: number, name: string, number: string}) {
     this.contacts = this.contacts.filter(contactItem => contactItem.id !== contact.id); 
   }
 
+  @Input()
+  visualizationMode!: string;
+
   @Output()
   visualizationModeChange = new EventEmitter<string>();
 
-  initCreateMode() {
-    this.visuazationMode = "create"
-    this.visualizationModeChange.emit('create');
-  }
-
   initEditMode() {
-    this.visuazationMode = "edit";
     this.visualizationModeChange.emit('edit');
   }
 
   shutdowCreateUpdateMode() {
-    this.selectedContact = "main";
     this.visualizationModeChange.emit('main');
   }
 }

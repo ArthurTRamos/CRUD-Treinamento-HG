@@ -1,53 +1,36 @@
-@if (visualizationMode === 'edit') {
-
+<div class="create-update-container">
     <div>
-        <div>
-            <h1>Criar contato</h1>
-
-            <div>
-                <form>
-                    <div>
-                        <label for="Name">Nome do contanto</label>
-                        <input id="Name" type="text" formControlName="nome"> 
-                    </div>
-                    <div>
-                        <label for="Number">Número</label>
-                        <input id="Number" type="text" formControlName="numero"> 
-                    </div>
-                    <div>
-                        <button (click)="enviarDados()"></button>
-                    </div>
-                </form>
-            </div>
-
-        </div>
+        <button class="back-button" (click)="out()">Voltar</button>
     </div>
-
-}
-
-@if (visualizationMode === 'create') {
-
-<div>
     <div>
-        <h1>Criar contato</h1>
-
+        @if (visualizationMode === 'create') {
+            <h1 class="title">Criar contato</h1>
+        }
+        @if (visualizationMode === 'edit') {
+            <h1 class="title">Editar contato</h1>
+        }
         <div>
-            <form>
-                <div>
+            <form class="contact-form" [formGroup]="meuFormulario">
+                <div class="input-container">
                     <label for="Name">Nome do contanto</label>
-                    <input id="Name" type="text" formControlName="nome"> 
+                    <input class="input" id="Name" type="text" formControlName="nome"> 
                 </div>
-                <div>
+                <div class="input-container">
                     <label for="Number">Número</label>
-                    <input id="Number" type="text" formControlName="numero"> 
+                    <input class="input" id="Number" type="text" formControlName="numero"> 
                 </div>
-                <div>
-                    <button (click)="enviarDados()"></button>
-                </div>
+                @if (visualizationMode === 'create') {
+                    <div>
+                        <button class="submit-button" (click)="enviarDados()">Criar contato</button>
+                    </div>
+                }
+                @if (visualizationMode === 'edit') {
+                    <div>
+                        <button class="submit-button" (click)="enviarDados()">Editar contato</button>
+                    </div>
+                }
             </form>
         </div>
 
     </div>
 </div>
-
-}
