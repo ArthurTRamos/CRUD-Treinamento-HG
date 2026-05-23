@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ServiceContacts } from '../service-contacts';
 
 @Component({
   selector: 'app-contact-box',
@@ -9,6 +10,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export class ContactBox {
   selectedContact: any = null;
+
+  constructor(private readonly service: ServiceContacts) {}
   
   @Input()
   visualizationMode!: string;
@@ -28,6 +31,14 @@ export class ContactBox {
       "number": "5519950211842"
     }
   ]
+
+  getContacts() {
+    this.service.getContacts().subscribe({
+      next: (response: any) => {
+        
+      }
+    });
+  }
 
   getInitialLetters(name: string) {
     const words = name.split(" ");
