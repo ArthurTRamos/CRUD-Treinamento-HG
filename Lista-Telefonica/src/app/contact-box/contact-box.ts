@@ -19,23 +19,15 @@ export class ContactBox {
   @Output()
   visualizationModeChange = new EventEmitter<string>();
 
-  contacts: {id: number, name: string, number: string}[] = [
-    {
-      "id": 0,
-      "name": "A",
-      "number": "5519950211842"
-    },
-    {
-      "id": 1,
-      "name": "B",
-      "number": "5519950211842"
-    }
-  ]
+  contacts: {id: number, name: string, number: string}[] = [];
 
   getContacts() {
     this.service.getContacts().subscribe({
       next: (response: any) => {
-        
+        this.contacts = response;
+      },
+      error: (error) => {
+        console.log(error);
       }
     });
   }
