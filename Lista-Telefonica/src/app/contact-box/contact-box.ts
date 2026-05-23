@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ServiceContacts } from '../service-contacts';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ServiceContacts } from '../services/service-contacts';
 
 @Component({
   selector: 'app-contact-box',
@@ -8,8 +8,9 @@ import { ServiceContacts } from '../service-contacts';
   styleUrl: './contact-box.scss',
 })
 
-export class ContactBox {
+export class ContactBox implements OnInit {
   selectedContact: any = null;
+  contacts: {id: number, name: string, number: string}[] = [];
 
   constructor(private readonly service: ServiceContacts) {}
   
@@ -19,7 +20,9 @@ export class ContactBox {
   @Output()
   visualizationModeChange = new EventEmitter<string>();
 
-  contacts: {id: number, name: string, number: string}[] = [];
+  ngOnInit(): void {
+    this.getContacts();
+  }
 
   getContacts() {
     this.service.getContacts().subscribe({
@@ -70,29 +73,41 @@ export class ContactBox {
   createContact(name: string, number: string) { 
     number = number.replaceAll(" ", "");
 
-    const newContact = {
-      id: this.contacts.length + 1,
-      name,
-      number
-    };
-    this.contacts = [...this.contacts, newContact];
-  }
+    const newContact = {name, number};
 
-  editContact(id: number, name: string, number: string) {
-    this.contacts = this.contacts.map(contact => {
-      if (contact.id === id) {
-        return {
-          ...contact,
-          name: name,
-          number: number
-        };
+    this.service.saveNewContact(newContact).subscribe({
+      next: (response: any) => {
+        this.contacts = [...this.contacts, response];
+      },
+      error: (error) => {
+        console.log(error);
       }
-      return contact;
     });
   }
 
-  deleteContact(contact: {id: number, name: string, number: string}) {
-    this.contacts = this.contacts.filter(contactItem => contactItem.id !== contact.id); 
+  editContact(id: number, name: string, number: string) {
+    number = number.replaceAll(" ", "");
+
+    const updatedContact: {name: string, number: string} = {name, number};
+
+    this.service.updateContact(id, updatedContact).subscribe({
+      next: (response: any) => {
+        this.contacts = this.contacts.map(contact =>
+          contact.id === id ? response : contact
+        )
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
+  }
+
+  deleteContact(id: number) {
+    this.service.deleteContact(id).subscribe({
+      next: () => {
+        this.contacts = this.contacts.filter(contactItem => contactItem.id !== id); 
+      }
+    })
   }
 
   initEditMode() {

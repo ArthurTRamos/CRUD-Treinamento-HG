@@ -1,5 +1,5 @@
 @if (visualizationMode === 'main') {    
-    @for (contact of contacts; track contact) {
+    @for (contact of contacts; track contact.id) {
         <div class="box">
             <div class="initial-letter-container">
                 <span id="span-initial-letters">{{ getInitialLetters(contact.name) }}</span>
@@ -14,7 +14,7 @@
             <button (click)="getContact(contact.id, contact.name, contact.number); initEditMode()">
                 <mat-icon>edit</mat-icon>
             </button>
-            <button (click)="deleteContact(contact)">
+            <button (click)="deleteContact(contact.id)">
                 <mat-icon>delete</mat-icon>
             </button>
         </div>
