@@ -6,19 +6,26 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './contact-box.html',
   styleUrl: './contact-box.scss',
 })
+
 export class ContactBox {
   selectedContact: any = null;
+  
+  @Input()
+  visualizationMode!: string;
+
+  @Output()
+  visualizationModeChange = new EventEmitter<string>();
 
   contacts: {id: number, name: string, number: string}[] = [
     {
       "id": 0,
-      "name": "Art",
-      "number": "+55 19 950211842"
+      "name": "A",
+      "number": "5519950211842"
     },
     {
       "id": 1,
-      "name": "Mai",
-      "number": "+55 22 222"
+      "name": "B",
+      "number": "5519950211842"
     }
   ]
 
@@ -36,6 +43,14 @@ export class ContactBox {
     return firstName[0] + lastName[0];
   }
 
+  formatNumber(number: string) {
+    const ddi: string = number.slice(0, 2);
+    const dd: string = number.slice(2, 4);
+    const phoneNumber: string = number.slice(4);
+
+    return "+" + ddi + " " + dd + " " + phoneNumber;
+  }
+
   whatsappLink(number: string) {
     number = number.slice(1);
     return(`http://wa.me/${number.replaceAll(' ', '')}`);
@@ -47,6 +62,17 @@ export class ContactBox {
       "name": name,
       "number": number
     }
+  }
+
+  createContact(name: string, number: string) { 
+    number = number.replaceAll(" ", "");
+
+    const newContact = {
+      id: this.contacts.length + 1,
+      name,
+      number
+    };
+    this.contacts = [...this.contacts, newContact];
   }
 
   editContact(id: number, name: string, number: string) {
@@ -62,24 +88,9 @@ export class ContactBox {
     });
   }
 
-  createContact(name: string, number: string) {
-    const newContact = {
-      id: this.contacts.length + 1,
-      name,
-      number
-    };
-    this.contacts = [...this.contacts, newContact];
-  }
-
   deleteContact(contact: {id: number, name: string, number: string}) {
     this.contacts = this.contacts.filter(contactItem => contactItem.id !== contact.id); 
   }
-
-  @Input()
-  visualizationMode!: string;
-
-  @Output()
-  visualizationModeChange = new EventEmitter<string>();
 
   initEditMode() {
     this.visualizationModeChange.emit('edit');

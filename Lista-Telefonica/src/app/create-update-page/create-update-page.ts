@@ -31,29 +31,26 @@ export class CreateUpdatePage implements OnInit {
     }),
 
     numero: new FormControl<string>('', {
-      validators: [Validators.required],
+      validators: [
+        Validators.required,
+        Validators.pattern("/^\d{13}$/")
+      ],
       nonNullable: true
     })
   });
 
   ngOnInit(): void {
-
     if (this.contact) {
-
       this.meuFormulario.patchValue({
         nome: this.contact.name,
         numero: this.contact.number
       });
-
       console.log(this.contact)
-
     }
   }
 
   enviarDados() {
-
     const dados = this.meuFormulario.getRawValue();
-
     this.save.emit({
       name: dados.nome,
       number: dados.numero

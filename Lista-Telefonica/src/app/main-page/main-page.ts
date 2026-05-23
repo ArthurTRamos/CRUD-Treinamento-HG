@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './main-page.scss',
 })
 export class MainPage {
-
-  visualizationMode = 'main';
+  visualizationMode: string = 'main';
 
   setVisualizationMode(mode: string) {
     this.visualizationMode = mode;
