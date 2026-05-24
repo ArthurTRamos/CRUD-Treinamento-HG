@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Backend-Contatos",
+    "\\Backend-Contatos\\Data",
+    "\\Backend-Contatos\\Mapping",
+    "\\Backend-Contatos\\Models",
+    "\\Backend-Contatos\\Models\\DTOs",
+    "\\Backend-Contatos\\Properties",
+    "\\Backend-Contatos\\Repositories",
+    "\\Backend-Contatos\\Repositories\\Interfaces",
+    "\\Backend-Contatos\\Services",
+    "\\Backend-Contatos\\Services\\Interfaces"
+  ],
+  "SelectedNode": "\\Backend-Contatos\\Controllers\\ContactsController.cs",
+  "PreviewInSolutionExplorer": false
+}

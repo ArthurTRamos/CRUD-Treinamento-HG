@@ -1,0 +1,46 @@
+@if (visualizationMode === 'main') {    
+    @for (contact of contacts; track contact.id) {
+        <div class="box">
+            <div class="initial-letter-container">
+                <span id="span-initial-letters">{{ getInitialLetters(contact.name) }}</span>
+            </div>
+            <div class="contact-name-number">
+                <span id="name">{{ contact.name }}</span>
+                <span id="number">{{ formatNumber(contact.number) }}</span>
+            </div>
+            <div class="image-container">
+                <a [href]="whatsappLink(contact.number)" target="_blank"><img src="whatsapp.png" alt="Whatsapp"></a>
+            </div>
+            <button (click)="getContact(contact.id, contact.name, contact.number); initEditMode()">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="deleteContact(contact.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    }
+}
+
+@if (visualizationMode === 'edit') {
+    <app-create-update-page 
+        [visualizationMode]="visualizationMode"
+        [contact]="selectedContact"
+        (save)="editContact(
+            selectedContact!.id,
+            $event.name,
+            $event.number
+        )"
+        (back)="shutdowCreateUpdateMode()">
+    </app-create-update-page>
+}
+
+@if (visualizationMode === 'create') {
+    <app-create-update-page
+        [visualizationMode]="visualizationMode"
+        (save)="createContact(
+            $event.name,
+            $event.number
+        )"
+        (back)="shutdowCreateUpdateMode()">
+    </app-create-update-page>
+}

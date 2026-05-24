@@ -1,0 +1,17 @@
+<div class="page">
+    <div class="container">
+        @if (visualizationMode === 'main') {
+            <h1>Lista de Contatos</h1>
+
+            <div class="add-button-container">
+                <button class="new-contact-btn" (click)="setVisualizationMode('create')">+ Novo Contato</button>
+            </div>
+        }
+
+        <app-contact-box
+            [visualizationMode]="visualizationMode"
+            (visualizationModeChange)="setVisualizationMode($event)">
+        </app-contact-box>
+
+    </div>
+</div>

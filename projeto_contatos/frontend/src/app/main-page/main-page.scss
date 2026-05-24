@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+    background: white;
+    border-radius: 18px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08),
+        0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.add-button-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.new-contact-btn {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 22px;
+    background: #2563eb;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.new-contact-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.new-contact-btn:active {
+    transform: translateY(0);
+}
+
+app-contact-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 25px;
+    }
+
+    .new-contact-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  # --------------- BANCO DE DADOS ---------------
+  db:
+    image: postgres:16-alpine
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  # --------------- BACKEND ---------------
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Backend-Contatos/Dockerfile
+    container_name: backend_api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8081
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+
+  # --------------- FRONTEND ---------------
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
