@@ -31,7 +31,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddOpenApi();
-
+    
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -46,6 +46,8 @@ app.UseCors("AllowAll");
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapOpenApi();
 
 using (var scope = app.Services.CreateScope())
 {

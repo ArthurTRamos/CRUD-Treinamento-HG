@@ -10,23 +10,23 @@
             <h1 class="title">Editar contato</h1>
         }
         <div>
-            <form class="contact-form" [formGroup]="meuFormulario">
+            <form class="contact-form" [formGroup]="myForms">
                 <div class="input-container">
                     <label for="Name">Nome do contato</label>
-                    <input class="input" id="Name" type="text" formControlName="nome"> 
+                    <input class="input" id="Name" type="text" formControlName="name"> 
                 </div>
                 <div class="input-container">
                     <label for="Number">Número</label>
-                    <input class="input" id="Number" type="text" formControlName="numero">
+                    <input class="input" id="Number" type="text" formControlName="number">
                 </div>
                 @if (visualizationMode === 'create') {
                     <div>
-                        <button class="submit-button" (click)="enviarDados()">Criar contato</button>
+                        <button class="submit-button" (click)="sendData()">Criar contato</button>
                     </div>
                 }
                 @if (visualizationMode === 'edit') {
                     <div>
-                        <button class="submit-button" (click)="enviarDados()">Editar contato</button>
+                        <button class="submit-button" (click)="sendData()">Editar contato</button>
                     </div>
                 }
             </form>

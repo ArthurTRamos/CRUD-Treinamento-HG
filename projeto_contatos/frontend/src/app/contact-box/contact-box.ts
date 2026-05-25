@@ -27,6 +27,7 @@ export class ContactBox implements OnInit {
     this.service.getContacts().subscribe({
       next: (response: any) => {
         this.contacts = response;
+        this.sortContacts();
         this.cdr.markForCheck();
       },
       error: (error) => {
@@ -35,15 +36,57 @@ export class ContactBox implements OnInit {
     });
   }
 
-  getContacts() {
-    this.service.getContacts().subscribe({
+  // CRUD
+
+  createContact(name: string, number: string) { 
+    number = number.replaceAll(" ", "");
+
+    const newContact = {name, number};
+
+    this.service.saveNewContact(newContact).subscribe({
       next: (response: any) => {
-        this.contacts = response;
+        this.contacts = [...this.contacts, response];
+        this.sortContacts();
+        this.shutdowCreateUpdateMode();
       },
       error: (error) => {
         console.log(error);
       }
     });
+  }
+
+  editContact(id: number, name: string, number: string) {
+    number = number.replaceAll(" ", "");
+
+    const updatedContact: {name: string, number: string} = {name, number};
+
+    this.service.updateContact(id, updatedContact).subscribe({
+      next: (response: any) => {
+        this.contacts = this.contacts.map(contact =>
+          contact.id === id ? response : contact
+        );
+        this.sortContacts();
+        this.shutdowCreateUpdateMode();
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
+  }
+
+  deleteContact(id: number) {
+    this.service.deleteContact(id).subscribe({
+      next: () => {
+        this.contacts = this.contacts.filter(contactItem => contactItem.id !== id); 
+        this.cdr.markForCheck();
+      }
+    })
+  }
+
+  // Auxiliares do HTML
+
+  sortContacts() {
+    this.contacts.sort((a, b) => a.name.localeCompare(b.name));
   }
 
   getInitialLetters(name: string) {
@@ -73,55 +116,12 @@ export class ContactBox implements OnInit {
     return(`http://wa.me/${number.replaceAll(' ', '')}`);
   }
 
-  getContact(id: number, name: string, number: string) {
+  getSelectedContact(id: number, name: string, number: string) {
     this.selectedContact = {
       "id": id,
       "name": name,
       "number": number
     }
-  }
-
-  createContact(name: string, number: string) { 
-    number = number.replaceAll(" ", "");
-
-    const newContact = {name, number};
-
-    this.service.saveNewContact(newContact).subscribe({
-      next: (response: any) => {
-        this.contacts = [...this.contacts, response];
-        this.shutdowCreateUpdateMode();
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    });
-  }
-
-  editContact(id: number, name: string, number: string) {
-    number = number.replaceAll(" ", "");
-
-    const updatedContact: {name: string, number: string} = {name, number};
-
-    this.service.updateContact(id, updatedContact).subscribe({
-      next: (response: any) => {
-        this.contacts = this.contacts.map(contact =>
-          contact.id === id ? response : contact
-        )
-        this.shutdowCreateUpdateMode();
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    })
-  }
-
-  deleteContact(id: number) {
-    this.service.deleteContact(id).subscribe({
-      next: () => {
-        this.contacts = this.contacts.filter(contactItem => contactItem.id !== id); 
-        this.cdr.markForCheck();
-      }
-    })
   }
 
   initEditMode() {

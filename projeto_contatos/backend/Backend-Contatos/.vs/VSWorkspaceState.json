@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Models\\DTOs",
+    "\\Repositories",
+    "\\Repositories\\Interfaces",
+    "\\Services"
+  ],
+  "SelectedNode": "\\Backend-Contatos.http",
+  "PreviewInSolutionExplorer": false
+}

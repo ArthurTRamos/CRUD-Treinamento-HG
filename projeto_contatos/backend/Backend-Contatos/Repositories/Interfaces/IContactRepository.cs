@@ -13,6 +13,6 @@ namespace Backend_Contatos.Repositories
         Task<Contact> CreateContactAsync(Contact contact);
         Task<Contact> UpdateContactAsync(Contact contact);
         Task<bool> DeleteContactAsync(int id);
-        Task<bool> SalvarAsync();
+        Task<bool> SaveAsync();
     }
 }

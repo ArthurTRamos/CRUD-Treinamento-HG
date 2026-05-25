@@ -13,8 +13,16 @@
 
 .initial-letter-container {
     background-color: lightgray;
-    border-radius: 100%;
-    padding: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.initial-letter-container span {
+    font-weight: bold;
 }
 
 .contact-name-number {
@@ -26,10 +34,18 @@
     font-weight: 500;
 }
 
-.image-container {
-    width: 25px;
-    height: 25px;
+.actions-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;            
     margin-left: auto;
+}
+
+.image-container {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
 }
 
 .image-container img {
@@ -43,8 +59,15 @@
 button {
     background-color: transparent;
     border: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 }

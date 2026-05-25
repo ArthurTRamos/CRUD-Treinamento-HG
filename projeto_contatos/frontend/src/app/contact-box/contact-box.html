@@ -8,15 +8,19 @@
                 <span id="name">{{ contact.name }}</span>
                 <span id="number">{{ formatNumber(contact.number) }}</span>
             </div>
-            <div class="image-container">
-                <a [href]="whatsappLink(contact.number)" target="_blank"><img src="whatsapp.png" alt="Whatsapp"></a>
+            <div class="actions-container">
+                <div class="image-container">
+                    <a [href]="whatsappLink(contact.number)" target="_blank">
+                        <img src="whatsapp.png" alt="Whatsapp">
+                    </a>
+                </div>
+                <button (click)="getSelectedContact(contact.id, contact.name, contact.number); initEditMode()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="deleteContact(contact.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </div>
-            <button (click)="getContact(contact.id, contact.name, contact.number); initEditMode()">
-                <mat-icon>edit</mat-icon>
-            </button>
-            <button (click)="deleteContact(contact.id)">
-                <mat-icon>delete</mat-icon>
-            </button>
         </div>
     }
 }

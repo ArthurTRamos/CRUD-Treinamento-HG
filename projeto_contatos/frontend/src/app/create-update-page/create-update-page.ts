@@ -24,16 +24,16 @@ export class CreateUpdatePage implements OnInit {
   @Output()
   back = new EventEmitter();
 
-  meuFormulario = new FormGroup({
-    nome: new FormControl<string>('', {
+  myForms = new FormGroup({
+    name: new FormControl<string>('', {
       validators: [Validators.required],
       nonNullable: true
     }),
 
-    numero: new FormControl<string>('', {
+    number: new FormControl<string>('', {
       validators: [
         Validators.required,
-        Validators.pattern("/^\d{13}$/")
+        Validators.pattern(/^\d{13}$/)
       ],
       nonNullable: true
     })
@@ -41,19 +41,37 @@ export class CreateUpdatePage implements OnInit {
 
   ngOnInit(): void {
     if (this.contact) {
-      this.meuFormulario.patchValue({
-        nome: this.contact.name,
-        numero: this.contact.number
+      this.myForms.patchValue({
+        name: this.contact.name,
+        number: this.contact.number
       });
       console.log(this.contact)
     }
   }
 
-  enviarDados() {
-    const dados = this.meuFormulario.getRawValue();
+  sendData() {
+    if (this.myForms.invalid) {
+      this.myForms.markAllAsTouched();
+
+      let message = 'Por favor, corrija os erros no formulário:\n';
+      
+      if (this.myForms.controls.name.errors?.['required'])
+        message += '- O nome é obrigatório.\n';
+      
+      if (this.myForms.controls.number.errors?.['required']) {
+        message += '- O número é obrigatório.\n';
+      } else if (this.myForms.controls.number.errors?.['pattern']) {
+        message += '- O número deve conter exatamente 13 dígitos numéricos.\n';
+      }
+
+      alert(message);
+      return;
+    }
+
+    const data = this.myForms.getRawValue();
     this.save.emit({
-      name: dados.nome,
-      number: dados.numero
+      name: data.name,
+      number: data.number
     });
   }
 

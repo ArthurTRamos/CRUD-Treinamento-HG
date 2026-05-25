@@ -109,3 +109,15 @@ C:\Users\MaiconMarques\Documents\Projeto Contatos Back\CRUD-Treinamento-HG\Backe
 C:\Users\MaiconMarques\Documents\Projeto Contatos Back\CRUD-Treinamento-HG\Backend-Contatos\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\MaiconMarques\Documents\Projeto Contatos Back\CRUD-Treinamento-HG\Backend-Contatos\bin\Debug\net10.0\Npgsql.dll
 C:\Users\MaiconMarques\Documents\Projeto Contatos Back\CRUD-Treinamento-HG\Backend-Contatos\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\Backend-Contatos.csproj.AssemblyReference.cache
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\Backend-Contatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\Backend-Contatos.AssemblyInfoInputs.cache
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\Backend-Contatos.AssemblyInfo.cs
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\Backend-Contatos.csproj.CoreCompileInputs.cache
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\Backend-Contatos.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\Backend-Contatos.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\Backend-Contatos.sourcelink.json
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\Backend-Contatos.dll
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\refint\Backend-Contatos.dll
+C:\Users\ArthurRamos\Documents\Repos\CRUD-Main\projeto_contatos\backend\Backend-Contatos\obj\Debug\net10.0\Backend-Contatos.pdb

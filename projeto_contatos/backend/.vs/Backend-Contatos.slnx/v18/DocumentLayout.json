@@ -1,9 +1,32 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\MaiconMarques\\Documents\\Projeto Contatos Back\\CRUD-Treinamento-HG\\",
+  "WorkspaceRootPath": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|c:\\users\\maiconmarques\\documents\\projeto contatos back\\crud-treinamento-hg\\backend-contatos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ArthurRamos\\Downloads\\TreinamentoAPI 1\\TreinamentoAPI\\TreinamentoAPI\\Repositories\\ProdutoRepositorySql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|c:\\users\\arthurramos\\documents\\repos\\crud-main\\projeto_contatos\\backend\\backend-contatos\\services\\contactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|solutionrelative:backend-contatos\\services\\contactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|c:\\users\\arthurramos\\documents\\repos\\crud-main\\projeto_contatos\\backend\\backend-contatos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|solutionrelative:backend-contatos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|c:\\users\\arthurramos\\documents\\repos\\crud-main\\projeto_contatos\\backend\\backend-contatos\\repositories\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|solutionrelative:backend-contatos\\repositories\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|c:\\users\\arthurramos\\documents\\repos\\crud-main\\projeto_contatos\\backend\\backend-contatos\\services\\interfaces\\icontactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|solutionrelative:backend-contatos\\services\\interfaces\\icontactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|c:\\users\\arthurramos\\documents\\repos\\crud-main\\projeto_contatos\\backend\\backend-contatos\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|solutionrelative:backend-contatos\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|c:\\users\\arthurramos\\documents\\repos\\crud-main\\projeto_contatos\\backend\\backend-contatos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E2E9152-B1E3-1B0F-0E86-C21C327D8110}|Backend-Contatos\\Backend-Contatos.csproj|solutionrelative:backend-contatos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -19,14 +42,97 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\MaiconMarques\\Documents\\Projeto Contatos Back\\CRUD-Treinamento-HG\\Backend-Contatos\\Program.cs",
-              "RelativeDocumentMoniker": "Backend-Contatos\\Program.cs",
-              "ToolTip": "C:\\Users\\MaiconMarques\\Documents\\Projeto Contatos Back\\CRUD-Treinamento-HG\\Backend-Contatos\\Program.cs",
-              "RelativeToolTip": "Backend-Contatos\\Program.cs",
+              "Title": "ProdutoRepositorySql.cs",
+              "DocumentMoniker": "C:\\Users\\ArthurRamos\\Downloads\\TreinamentoAPI 1\\TreinamentoAPI\\TreinamentoAPI\\Repositories\\ProdutoRepositorySql.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Downloads\\TreinamentoAPI 1\\TreinamentoAPI\\TreinamentoAPI\\Repositories\\ProdutoRepositorySql.cs",
+              "ToolTip": "C:\\Users\\ArthurRamos\\Downloads\\TreinamentoAPI 1\\TreinamentoAPI\\TreinamentoAPI\\Repositories\\ProdutoRepositorySql.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Downloads\\TreinamentoAPI 1\\TreinamentoAPI\\TreinamentoAPI\\Repositories\\ProdutoRepositorySql.cs",
+              "ViewState": "AgIAACABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T14:00:34.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\appsettings.json",
+              "RelativeDocumentMoniker": "Backend-Contatos\\appsettings.json",
+              "ToolTip": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\appsettings.json",
+              "RelativeToolTip": "Backend-Contatos\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-25T13:41:05.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ContactRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Repositories\\ContactRepository.cs",
+              "RelativeDocumentMoniker": "Backend-Contatos\\Repositories\\ContactRepository.cs",
+              "ToolTip": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Repositories\\ContactRepository.cs",
+              "RelativeToolTip": "Backend-Contatos\\Repositories\\ContactRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T13:40:08.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContactService.cs",
+              "DocumentMoniker": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Services\\ContactService.cs",
+              "RelativeDocumentMoniker": "Backend-Contatos\\Services\\ContactService.cs",
+              "ToolTip": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Services\\ContactService.cs",
+              "RelativeToolTip": "Backend-Contatos\\Services\\ContactService.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T13:39:37.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IContactService.cs",
+              "DocumentMoniker": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Services\\Interfaces\\IContactService.cs",
+              "RelativeDocumentMoniker": "Backend-Contatos\\Services\\Interfaces\\IContactService.cs",
+              "ToolTip": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Services\\Interfaces\\IContactService.cs",
+              "RelativeToolTip": "Backend-Contatos\\Services\\Interfaces\\IContactService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T19:21:19.23Z"
+              "WhenOpened": "2026-05-25T13:39:32.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ContactsController.cs",
+              "DocumentMoniker": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Controllers\\ContactsController.cs",
+              "RelativeDocumentMoniker": "Backend-Contatos\\Controllers\\ContactsController.cs",
+              "ToolTip": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Controllers\\ContactsController.cs",
+              "RelativeToolTip": "Backend-Contatos\\Controllers\\ContactsController.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T13:38:57.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Program.cs",
+              "RelativeDocumentMoniker": "Backend-Contatos\\Program.cs",
+              "ToolTip": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Program.cs",
+              "RelativeToolTip": "Backend-Contatos\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T13:38:37.175Z",
+              "EditorCaption": ""
             }
           ]
         }

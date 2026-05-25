@@ -1612,23 +1612,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MaiconMarques\\.nuget\\packages\\": {},
+    "C:\\Users\\ArthurRamos\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MaiconMarques\\Documents\\Projeto Contatos Back\\CRUD-Treinamento-HG\\Backend-Contatos\\Backend-Contatos.csproj",
+      "projectUniqueName": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Backend-Contatos.csproj",
       "projectName": "Backend-Contatos",
-      "projectPath": "C:\\Users\\MaiconMarques\\Documents\\Projeto Contatos Back\\CRUD-Treinamento-HG\\Backend-Contatos\\Backend-Contatos.csproj",
-      "packagesPath": "C:\\Users\\MaiconMarques\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MaiconMarques\\Documents\\Projeto Contatos Back\\CRUD-Treinamento-HG\\Backend-Contatos\\obj\\",
+      "projectPath": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\Backend-Contatos.csproj",
+      "packagesPath": "C:\\Users\\ArthurRamos\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ArthurRamos\\Documents\\Repos\\CRUD-Main\\projeto_contatos\\backend\\Backend-Contatos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\MaiconMarques\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ArthurRamos\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

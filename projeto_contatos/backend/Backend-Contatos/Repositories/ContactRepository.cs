@@ -26,7 +26,7 @@ namespace Backend_Contatos.Repositories
         public async Task<IEnumerable<Contact>> GetAllContactsAsync()
         {
             return await _context.Contacts.ToListAsync();
-        }
+       }
 
         /// <summary>
         /// GET Method - Safe and Idempotent
@@ -44,7 +44,7 @@ namespace Backend_Contatos.Repositories
         public async Task<Contact> CreateContactAsync(Contact contact)
         {
             _context.Contacts.Add(contact);
-            await SalvarAsync();
+            await SaveAsync();
             return contact;
         }
 
@@ -63,7 +63,7 @@ namespace Backend_Contatos.Repositories
             contactExisting.Number = contact.Number;
 
             _context.Contacts.Update(contactExisting);
-            await SalvarAsync();
+            await SaveAsync();
             return contactExisting;
         }
 
@@ -79,14 +79,14 @@ namespace Backend_Contatos.Repositories
                 return false;
 
             _context.Contacts.Remove(contact);
-            await SalvarAsync();
+            await SaveAsync();
             return true;
         }
 
         /// <summary>
         /// Saves all changes to the context
         /// </summary>
-        public async Task<bool> SalvarAsync()
+        public async Task<bool> SaveAsync()
         {
             return await _context.SaveChangesAsync() > 0;
         }
